@@ -17,7 +17,16 @@
     "@sap/cds-dk": "^7"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-appquestionnaires-fiori": "cds watch --open \"appquestionnaires/webapp/test/flpSandbox.html?sap-ui-xx-viewCache=false#test-display\"",
+    "watch-appquestionnaires": "cds watch --open appquestionnaires/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy risk --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-appinspections": "cds watch --open appinspections/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-appexecuteinspections": "cds watch --open appexecuteinspections/webapp/index.html?sap-ui-xx-viewCache=false",
+    "launchpad": "cds watch --open launchpage.html?sap-ui-xx-viewCache=false",
+    "watch-appbowtie": "cds watch --open appbowtie/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
