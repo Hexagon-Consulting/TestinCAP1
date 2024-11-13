@@ -1,0 +1,41 @@
+{
+  "xsappname": "risk-management",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Read",
+      "description": "Read access to employees and documents"
+    },
+    {
+      "name": "$XSAPPNAME.Create",
+      "description": "Create new employees and documents"
+    },
+    {
+      "name": "$XSAPPNAME.Update",
+      "description": "Update employees and documents"
+    },
+    {
+      "name": "$XSAPPNAME.Delete",
+      "description": "Delete employees and documents"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Read-only access",
+      "scope-references": [
+        "$XSAPPNAME.Read"
+      ]
+    },
+    {
+      "name": "Editor",
+      "description": "CRUD access to employees and documents",
+      "scope-references": [
+        "$XSAPPNAME.Read",
+        "$XSAPPNAME.Create",
+        "$XSAPPNAME.Update",
+        "$XSAPPNAME.Delete"
+      ]
+    }
+  ]
+}
