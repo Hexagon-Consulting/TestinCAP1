@@ -1,12 +1,11 @@
 namespace testingCAP1;
 using{
     managed,
-    cuid,
-    User
+    cuid
 } from '@sap/cds/common';
 
-entity Empleados : cuid,managed {
-    key EmployeeID : Integer @title: 'Employee ID';
+entity Empleados : managed {
+    key EmployeeID : UUID @title: 'Employee ID';
     FirstName      : String(100);
     LastName       : String(100);
     Address        : String(255);
@@ -17,8 +16,8 @@ entity Empleados : cuid,managed {
     Phone          : Integer;
 }
 
-entity Documentos {
-  key DocumentID : Integer @title: 'Document ID';
+entity Documentos: managed {
+  key DocumentID : UUID @title: 'Document ID';
   EmployeeID     : Association to Empleados;
   Name           : String(255);
   Type           : String(50);
